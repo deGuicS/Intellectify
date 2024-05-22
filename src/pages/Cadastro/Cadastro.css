@@ -1,0 +1,23 @@
+.title {
+  font-size: 30px;
+}
+.fullname{
+  display: flex;
+  width: 100%;
+}
+.pageContainer{
+  margin-bottom: 80px;
+}
+
+.fullname .form-control {
+  width: 50%;
+}
+
+.logar{
+  margin-top: 15px;
+}
+
+.link{
+  color: #F5CA4B;
+}
+

@@ -1,0 +1,52 @@
+.box {
+  width: 700px;
+  height: 262px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.box-paisagem {
+  width: 100%;
+  height: 50%;
+  border-radius: 10px 10px 0 0;
+}
+
+.perfilImage{
+  position: absolute;
+  top: 15%;
+}
+
+.perfilImage img {
+  width: 700px;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.title {
+font-size: 18px;
+color: #EAB51B;
+}
+
+.subtitle {
+font-size: 16px;
+}
+
+.text {
+font-size: 14px;
+}
+
+@media screen and (max-width: 875px) {
+  .box{
+    width: fit-content;
+  }
+}  

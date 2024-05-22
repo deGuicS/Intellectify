@@ -1,0 +1,45 @@
+.caixa {
+    height: 125px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 850px;
+}
+  
+.caixa img {
+    border-radius: 5px;
+}
+  
+.texto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    color: #97D781;
+    font-weight: bold;
+}
+  
+.titulo {
+    font-weight: bold;
+}
+
+.qntCursos{
+    color: #333333;
+}
+
+@media screen and (max-width: 1050px) {
+    .caixa{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 915px) {
+    .navcolumn{
+        display: none;
+    }
+}     

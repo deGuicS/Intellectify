@@ -1,0 +1,31 @@
+.background{
+    background-color: #f0f0f0;
+    height: 100vh;
+}
+
+.rankContainer{
+    display: flex;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    max-width: 1280px;
+}
+
+.container-facul {
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 1050px) {
+    /* .rankContainer{
+        width: 80%;
+    } */
+  }  
+  

@@ -1,0 +1,142 @@
+.PostContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  height: auto;
+  max-height: 650px;
+  width: 545px;
+  max-width: 545px;
+  background-color: #fff;
+  border-radius: 24px;
+  box-sizing: border-box;
+  box-shadow: 0px 15px 15px -8px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+.PostHeader {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.PostHeader h1 {
+  margin-left: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.createSeeComment{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.icons-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.post-icones {
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  color: #575757;
+  font-size: 30px;
+}
+
+.comment {
+  margin-left: 8px;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.likes-text {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: #534A4A;
+  text-align: right;
+}
+
+.post-text {
+  margin-left: 20px;
+  display: flex;
+}
+
+.post-title{
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.create-comment{
+  margin-left: 20px;
+  color: #534A4A;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.show-comments {
+  text-align: right;
+  margin-right: 20px;
+  color: #534A4A;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 20px;
+}
+
+.comments-section {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.comments-section .comment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.comments-section .comment .comment-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.comments-section .comment h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.comments-section .comment p {
+  margin: 2px 0 0 0;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .PostContainer{
+    width: 100%;
+  }
+  
+}
+@media screen and (max-width: 465px) {
+  .post-title {
+    font-size: 14px;
+  }
+  
+  .post-description {
+    font-size: 14px;
+  }
+  
+  .likes-text p{
+    font-size: 12px;
+  }
+}

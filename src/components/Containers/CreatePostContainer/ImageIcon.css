@@ -1,0 +1,13 @@
+.image-upload-with-button {
+  display: flex;
+  align-items: center;
+}
+
+.upload-icon{
+  cursor: pointer;
+}
+
+/* Estilo para esconder o input de arquivo */
+input[type='file'] {
+  display: none;
+}

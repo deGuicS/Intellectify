@@ -1,0 +1,59 @@
+.perfilBackgroundColor{
+  background-color: #f0f0f0;
+}
+
+.perfilcont {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  padding-top: 50px;
+  height: 100vh;
+  overflow: hidden;
+  max-width: 1280px;
+}
+
+.perfilpostContainerFeed{
+  height: calc(100vh - 90px);
+  overflow:auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perfilcolumn-dir img{
+  margin-top: 70px;
+  width: 187px;
+  height: 226px;
+}
+
+@media screen and (max-width: 950px) {
+  .perfilcolumn-dir {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .perfilcolumn{
+    display: none;
+  }
+  .perfilcont{
+      margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column{
+    display: none;
+  }
+  .perfilcont{
+      margin: 0;
+  }
+}  
+
+@media screen and (max-width: 300px) {
+  .textin{
+        width: 80%;
+  }
+}  
+
