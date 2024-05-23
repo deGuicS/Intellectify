@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { IoMdImage } from "react-icons/io";
+import { LiaUserEditSolid } from "react-icons/lia";
 
-const FileInput = (name) => {
+const FileInput = (name, local) => {
   const [baseImage, setBaseImage] = useState("");
 
   const uploadImage = async (e) => {
@@ -24,11 +25,19 @@ const FileInput = (name) => {
       };
     });
   };
+  let showIcon
+  if(local === "Perfil")
+    {
+      showIcon = <LiaUserEditSolid color="#575757" className="upload-icon"/>
+    }
+    else{
+      showIcon = <IoMdImage color="#575757" className="upload-icon" />
+    }
 
   return (
     <div className="image-upload">
       <label htmlFor="image-upload">
-        <IoMdImage color="#575757" className="upload-icon" />
+        {showIcon}
       </label>
       <input
         id="image-upload"
