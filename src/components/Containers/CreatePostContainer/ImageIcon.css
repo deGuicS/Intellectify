@@ -1,6 +1,7 @@
-.image-upload-with-button {
+.image-upload {
   display: flex;
   align-items: center;
+  margin-bottom: 7px;
 }
 
 .upload-icon{

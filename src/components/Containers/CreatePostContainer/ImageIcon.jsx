@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ImageIcon.css'
 import { IoMdImage } from "react-icons/io";
 
-const ImageIcon = ({name}) => {
+const ImageIcon = ({name, handleFileChange}) => {
 
 
   return (
@@ -16,6 +16,7 @@ const ImageIcon = ({name}) => {
           accept="image/*"
           style={{ display: 'none' }}
           name = {name}
+          onChange={handleFileChange}
         />
       </div>
   );

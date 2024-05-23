@@ -3,7 +3,7 @@ const azureUrl = "https://intellectifyapi.azurewebsites.net/api/";
 // Função para pegar todos os posts + usuários atrelados aos posts 
 export const pegarTodosPosts = async () => {
   try {
-    const url = azureUrl + `post`;
+    const url = azureUrl + `post?SortBy=criado_em&IsDescending=true&PageSize=10`;
   
     const res = await fetch(url, {
       method: 'GET',
@@ -74,3 +74,29 @@ export const curtirPost = async (id, curtida) => {
   }
 }
 
+export const  criarPost = async (email, texto, imagem) => {
+  try {
+    const url = azureUrl + `post/${email}`;
+  
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({texto: texto, imagem: imagem})
+    });
+
+    console.log(url)
+
+    if (!res.ok) {
+      throw new Error("Post não criado!");
+    }
+    
+    const response = await res.json();
+    return response
+  } catch (e) {
+    throw e;
+  }
+}
+
+// 

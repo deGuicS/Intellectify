@@ -9,10 +9,12 @@ import NewsContainer from '../../components/Containers/NewsContainer/NewsContain
 import logobranca from '../../assets/logo-intellectify-sem-fundo.png';
 import { pegarUsuario } from '../../ApiFunctions/UsuarioFunctions';
 import perfilVazio from '../../assets/perfilVazio.png';
-import { pegarTodosPosts } from '../../ApiFunctions/PostFunctions.jsx';
+import { criarPost, pegarTodosPosts } from '../../ApiFunctions/PostFunctions.jsx';
 import MenuHamburger from '../../components/MenuHamburguer/Menuburger.jsx';
 import ImageIcon from '../../components/Containers/CreatePostContainer/ImageIcon.jsx';
-import CreateIcon from '../../components/Containers/CreatePostContainer/CreateIcon.jsx';
+import { HiMiniPlay } from "react-icons/hi2";
+import FileInput from '../../components/FileInput/FileInput.jsx';
+import Button from '../../components/Form/Button/Button.jsx';
 
 
 const Feed = () => {
@@ -20,6 +22,7 @@ const Feed = () => {
   const [userEmail, setUserEmail] = useState('');
   const [userData, setUserData] = useState(null);
   const [posts, setPosts] = useState([]);
+  const [baseImage, setBaseImage] = useState("");
 
   useEffect(() => {
     // Recupera o email do localStorage quando o componente é montado
@@ -50,20 +53,24 @@ const Feed = () => {
       fetchPostsData();
     }
   }, []);
-  const handlePost = async () => {
-    const textoPost = document.querySelector('input[name="textoPost"]').value;
-    const imagemPost = document.querySelector('input[name="imagemPost"]').value;
-
+  
+  
     
+  const fetchCriarPost = async () => {
     try {
+      const savedEmail = localStorage.getItem('userEmail');
+      const textoPost = document.querySelector('input[name="textoPost"]').value;
+      const imagemPost = localStorage.getItem('baseImage');
+      
+      if (!imagemPost) {
+        console.warn('Nenhuma imagem foi selecionada.');
+        return;
+      }
 
-      const novoPost = await autenticacaoUsuario(email, senha);
-
-
+      const postcriado = await criarPost(savedEmail, textoPost, imagemPost);
+      window.location.reload();
     } catch (error) {
-
-      window.alert("Erro ao autenticar, usuário ou senha devem estar incorretos!");
-
+      console.error("Erro ao buscar os posts:", error);
     }
   };
 
@@ -81,8 +88,8 @@ const Feed = () => {
             <ImagemMold userImage={userData && userData.imagem || perfilVazio}/>
             <div className="textin"><TextInput type="textarea" name="textoPost"/></div>
             <div className="image-icone">
-              <ImageIcon name="imagemPost"/>
-              <CreateIcon onClick={handlePost}/>
+              <FileInput/>
+              <HiMiniPlay color="#575757" onClick={fetchCriarPost}/>
             </div>
           </CreatePostContainer>
           <div className="postContainerFeed">
@@ -95,6 +102,7 @@ const Feed = () => {
                 postDescription={post.texto}
                 likes={post.curtidas}
                 comments={post.comentarios}
+                postID={post.id}
               />
             ))}
           </div>

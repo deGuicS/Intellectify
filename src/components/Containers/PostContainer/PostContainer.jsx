@@ -6,6 +6,7 @@ import ProfileMold from '../../ImagemMold/ProfileMold.jsx'
 import { BiComment } from "react-icons/bi";
 import { useState } from 'react';
 import { curtirPost } from "../../../ApiFunctions/PostFunctions.jsx";
+import CommentBox from "../../CommentBox/CommentBox.jsx";
 
 const PostContainer = ({ userImageSrc, postImageSrc, postID, userName, postDescription, likes, comments }) => {
   
@@ -19,17 +20,6 @@ const PostContainer = ({ userImageSrc, postImageSrc, postID, userName, postDescr
 
   const LikeButton = () => {
     setLiked(!liked);
-    const fetchCurtirPost = async (id, curtida) => {
-      try {
-        const data = await curtirPost(id, curtida);
-      } catch (error) {
-        console.error('Erro ao curtir post:', error);
-      }
-    };
-    let curtida = 0
-    liked === true ? curtida=1 : curtida=-1
-    console.log(liked)
-    fetchCurtirPost(postID, curtida);
   }
 
   const createComment = () =>{
@@ -66,10 +56,10 @@ const PostContainer = ({ userImageSrc, postImageSrc, postID, userName, postDescr
         </div>
         <div className="post-text"> 
           <h1 className="post-title">{userName}:</h1>
-          <h1 className="post-description">"{postDescription}</h1>
+          <h1 className="post-description">{postDescription}</h1>
         </div>
         <div className="createSeeComment">
-          {inputComment ? "qq coisa" : (
+          {inputComment ? <CommentBox postId={postID}/> : (
             <p className="create-comment" onClick={createComment}>
             Adicionar um comentário...
             </p>

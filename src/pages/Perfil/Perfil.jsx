@@ -62,11 +62,11 @@ const Perfil = () => {
         </div>
         <div className="perfilmain-column">
           <div className="perfilpostContainerFeed">
-            <PerfilContainer userImage={userData && userData.imagem || perfilVazio}/>
+            <PerfilContainer userImage={userData && userData.imagem || perfilVazio} nome={userData && userData.nome || ""} email={userData && userData.email || ""}/>
             {postsPerfil.map((post, index) => (
               <PostContainer
                 key={index}
-                userImageSrc={post.nome || perfilVazio}
+                userImageSrc={userData && userData.imagem || perfilVazio}
                 userName={post.usuarioEmail}
                 postImageSrc={post.imagem}
                 postDescription={post.texto}

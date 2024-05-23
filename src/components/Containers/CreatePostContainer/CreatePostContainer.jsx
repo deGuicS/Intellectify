@@ -1,11 +1,11 @@
 import "./CreatePostContainer.css"
 
 
-const CreatePostContainer = (props) => {
+const CreatePostContainer = ({ children }) => {
   return (
-    <div className='CreateContainer'>{props.children}</div>
-  )
-}
+    <div className='CreateContainer'>{children}</div>
+  );
+};
 
 
 export default CreatePostContainer
