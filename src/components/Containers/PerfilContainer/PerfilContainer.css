@@ -22,6 +22,7 @@
   font-size: 35px;
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
 
 .perfilImage{
