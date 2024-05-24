@@ -96,3 +96,26 @@ export const pegarUsuario = async (email) => {
     throw e;
   }
 };
+
+export const alterarImagemPerfil = async (email, imagem) => {
+  try {
+    const url = azureUrl + `usuario/${email}`;
+  
+    const res = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({imagem: imagem})
+    });
+
+    if (!res.ok) {
+      throw new Error("Imagem não alterada!");
+    }
+    
+    const response = await res.json();
+    return response
+  } catch (e) {
+    throw e;
+  }
+}

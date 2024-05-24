@@ -63,6 +63,7 @@
 .post-text {
   margin-left: 20px;
   display: flex;
+  flex-direction: column;
 }
 
 .post-title{

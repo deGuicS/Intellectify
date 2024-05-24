@@ -53,9 +53,6 @@ const Perfil = () => {
 
   return (
     <div className="perfilBackgroundColor">
-      <div className='hamMenu'>
-        <div className="burgermenufeed"><MenuHamburger/></div>
-      </div>
       <div className="perfilcont">
         <div className="perfilcolumn">
           <NavBar userImage={userData && userData.imagem || perfilVazio}/>

@@ -52,4 +52,13 @@
 
 .unique-link{
   display: flex;
+  flex-direction: row;
+}
+
+.menuIcons{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  padding: 0;
 }
