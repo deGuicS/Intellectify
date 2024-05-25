@@ -86,7 +86,7 @@ const Feed = () => {
         <div className="main-column">
           <CreatePostContainer>   
             <ImagemMold userImage={userData && userData.imagem || perfilVazio}/>
-            <div className="textin"><TextInput type="textarea" name="textoPost"/></div>
+            <div className="textin"><TextInput type="textarea" name="textoPost" placeholder="O que você esta pensando?"/></div>
             <div className="image-icone">
               <FileInput local="Perfil"/>
               <HiMiniPlay color="#575757" onClick={fetchCriarPost}/>
