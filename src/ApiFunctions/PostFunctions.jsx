@@ -3,7 +3,7 @@ const azureUrl = "https://intellectifyapi.azurewebsites.net/api/";
 // Função para pegar todos os posts + usuários atrelados aos posts 
 export const pegarTodosPosts = async () => {
   try {
-    const url = azureUrl + `post?SortBy=criado_em&IsDescending=true&PageSize=10`;
+    const url = azureUrl + `post?SortBy=criado_em&IsDescending=true&PageSize=5`;
   
     const res = await fetch(url, {
       method: 'GET',
