@@ -39,7 +39,7 @@ const CommentBox = ({postId}) => {
                       value={comment}
                       onChange={handleCommentChange}
                       rows="4"
-                      cols="50"
+                      cols="35"
                       placeholder="Escreva seu comentário aqui..."
                   />
                   <br />
